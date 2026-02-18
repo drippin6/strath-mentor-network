@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #004684;
+  --secondary: #D4AF37;
+  --accent: #C8102E;
+  --success: #00843D;
+  --primary-light: #0046841a;
+  --secondary-light: #D4AF371a;
+  --accent-light: #C8102E1a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb;
+  color: #111827;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth theme transitions */
+* {
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+}
+
+/* Custom transitions */
+.transition-all {
+  transition-duration: 300ms;
+}
+
+/* Themeable Utilities */
+.bg-primary {
+  background-color: var(--primary);
+}
+.text-primary {
+  color: var(--primary);
+}
+.border-primary {
+  border-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+.border-secondary {
+  border-color: var(--secondary);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.text-accent {
+  color: var(--accent);
+}
+.border-accent {
+  border-color: var(--accent);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+/* Specific button styles for the school theme */
+.btn-school-primary {
+  @apply bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 active:scale-95 transition-all;
+}
+
+.btn-school-secondary {
+  @apply bg-secondary text-primary hover:bg-secondary/90 shadow-lg shadow-secondary/20 active:scale-95 transition-all;
+}
+
+/* Animations */
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
